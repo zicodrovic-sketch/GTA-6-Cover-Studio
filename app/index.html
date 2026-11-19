@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cover Studio — GTA 6 style</title>
+<link rel="stylesheet" href="fonts/font.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <h1>Cover Studio <span class="tag">GTA 6 style</span></h1>
+  <p class="subtitle">Three photos, one bold caption — build your own Vice City cover.</p>
+</header>
+
+<main class="layout">
+  <section class="preview-col">
+    <canvas id="preview" width="960" height="540" aria-label="Live cover preview"></canvas>
+    <div id="status" role="status">Loading…</div>
+
+    <div class="export-row">
+      <button id="btn-export-1080" type="button">Export 1080 × 1080</button>
+      <button id="btn-export-1350" type="button">Export 1080 × 1350</button>
+      <button id="btn-export-1920" type="button">Export 1920 × 1080</button>
+    </div>
+  </section>
+
+  <section class="controls-col">
+    <section class="panel-block" aria-label="Photos">
+      <h2>Photos</h2>
+      <div id="drop-zone" tabindex="0">
+        <p>Drop photos here, or pick files below.</p>
+        <label class="file-label">Choose photos
+          <input type="file" id="photo-input" accept="image/*" multiple>
+        </label>
+      </div>
+      <div class="sample-row">
+        <button id="btn-sample-boulevard" type="button">Load sample: Boulevard</button>
+        <button id="btn-sample-pier" type="button">Load sample: Pier</button>
+      </div>
+      <ul id="photo-list" aria-label="Loaded photos"></ul>
+    </section>
+
+    <section class="panel-block" aria-label="Panels">
+      <h2>Panels</h2>
+
+      <fieldset class="panel-controls" data-panel="0">
+        <legend>Panel 1 — top, full width</legend>
+        <label>Photo
+          <select id="panel-photo-0"></select>
+        </label>
+        <label>Zoom
+          <input type="range" id="panel-zoom-0" min="1" max="3" step="0.05" value="1">
+        </label>
+        <label>Pan X
+          <input type="range" id="panel-panx-0" min="0" max="1" step="0.01" value="0.5">
+        </label>
+        <label>Pan Y
+          <input type="range" id="panel-pany-0" min="0" max="1" step="0.01" value="0.5">
+        </label>
+      </fieldset>
+
+      <fieldset class="panel-controls" data-panel="1">
+        <legend>Panel 2 — bottom left</legend>
+        <label>Photo
+          <select id="panel-photo-1"></select>
+        </label>
+        <label>Zoom
+          <input type="range" id="panel-zoom-1" min="1" max="3" step="0.05" value="1">
+        </label>
+        <label>Pan X
+          <input type="range" id="panel-panx-1" min="0" max="1" step="0.01" value="0.5">
+        </label>
+        <label>Pan Y
+          <input type="range" id="panel-pany-1" min="0" max="1" step="0.01" value="0.5">
+        </label>
+      </fieldset>
+
+      <fieldset class="panel-controls" data-panel="2">
+        <legend>Panel 3 — bottom right</legend>
+        <label>Photo
+          <select id="panel-photo-2"></select>
+        </label>
+        <label>Zoom
+          <input type="range" id="panel-zoom-2" min="1" max="3" step="0.05" value="1">
+        </label>
+        <label>Pan X
+          <input type="range" id="panel-panx-2" min="0" max="1" step="0.01" value="0.5">
+        </label>
+        <label>Pan Y
+          <input type="range" id="panel-pany-2" min="0" max="1" step="0.01" value="0.5">
+        </label>
+      </fieldset>
+    </section>
+
+    <section class="panel-block" aria-label="Caption">
+      <h2>Caption</h2>
+      <label>Text
+        <input id="caption-text" type="text" value="VICE CITY" maxlength="40">
+      </label>
+      <label>Size
+        <input id="caption-size" type="range" min="0.5" max="1.8" step="0.05" value="1">
+      </label>
+      <label>Vertical position
+        <input id="caption-y" type="range" min="0.1" max="0.95" step="0.01" value="0.86">
+      </label>
+      <label>Colour
+        <input id="caption-color" type="color" value="#ffffff">
+      </label>
+    </section>
+  </section>
+</main>
+
+<script src="src/cover.js"></script>
+<script src="src/main.js"></script>
+</body>
+</html>
